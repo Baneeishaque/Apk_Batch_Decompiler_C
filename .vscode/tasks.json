@@ -4,15 +4,41 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "compile",
+            "label": "compile Apk Decompiler",
             "type": "shell",
             "command": "x86_64-w64-mingw32-gcc-7.2.0",
             "args": [
                 "-Wall",
                 "-g",
-                "${fileBasename}",
+                "apk_decompiler.c",
                 "-o",
-                "${fileBasenameNoExtension}.exe"
+                "apk_decompiler.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            }
+        },
+        {
+            "label": "compile Apk Directory Decompiler",
+            "type": "shell",
+            "command": "x86_64-w64-mingw32-gcc-7.2.0",
+            "args": [
+                "-Wall",
+                "-g",
+                "apk_directory_decompiler.c",
+                "-o",
+                "apk_directory_decompiler.exe"
             ],
             "group": {
                 "kind": "build",
@@ -36,7 +62,7 @@
             "args": [
                 "Cool me music HD version.apk"
             ],
-            "dependsOn": "compile",
+            "dependsOn": "compile Apk Decompiler",
             "problemMatcher": [],
             "presentation": {
                 "echo": true,
@@ -53,7 +79,7 @@
             "args": [
                 "Whose Phone Number In Contacts 1.3_4.apk"
             ],
-            "dependsOn": "compile",
+            "dependsOn": "compile Apk Decompiler",
             "problemMatcher": [],
             "presentation": {
                 "echo": true,
@@ -62,6 +88,26 @@
                 "panel": "shared",
                 "showReuseMessage": true
             }
-        }
+        },
+        {
+            "label": "run Apk Folder Decompiler",
+            "type": "shell",
+            "command": "apk_directory_decompiler.exe",
+            "args": [
+                "E:\\DK-HP-PA-2000AR\\Laboratory\\CMD_GCC\\apk_directory_decompiler"
+            ],
+            "dependsOn": [
+                "compile Apk Decompiler",
+                "compile Apk Directory Decompiler"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true
+            }
+        },
     ]
 }
