@@ -9,6 +9,7 @@
             "command": "gcc",
             "args": [
                 "-Wall",
+                "-g",
                 "${fileBasename}",
                 "-o",
                 "${fileBasenameNoExtension}.exe"
