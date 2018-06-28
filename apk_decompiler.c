@@ -4,12 +4,13 @@
 
 int main(int argc, char *argv[])
 {
-	int i;
+	int i, j, last_back_slash_position;
 
 	//	FILE *fp;
 
 	char apk_name_with_path_and_extension[1000],
 		apk_name_with_path[1000],
+		apk_name[1000],
 
 		command2[1000] = "apktool d \"",
 		command2_last[100] = "\"",
@@ -33,7 +34,7 @@ int main(int argc, char *argv[])
 		exit(0);
 	}
 
-	//	printf("argv[1] : %s",argv[1]);
+	// printf("argv[1] : %s", argv[1]);
 	//	system("pause");
 
 	i = 0;
@@ -76,9 +77,36 @@ int main(int argc, char *argv[])
 	// printf("%s", command3);
 	//	system("pause");
 
+	i = 0;
+	while (apk_name_with_path[i] != '\0')
+	{
+		if (apk_name_with_path[i] == '\\')
+		{
+			last_back_slash_position = i;
+		}
+		i++;
+	}
+
+	// printf("%d", last_back_slash_position);
+	// system("pause");
+
+	i = last_back_slash_position + 1;
+	j = 0;
+	while (apk_name_with_path[i] != '\0')
+	{
+		apk_name[j] = apk_name_with_path[i];
+		i++;
+		j++;
+	}
+
+	apk_name[j] = '\0';
+
+	// printf("%s", apk_name);
+	// system("pause");
+
 	strcat(command6, apk_name_with_path_and_extension);
 	strcat(command6, command6_middle);
-	strcat(command6, apk_name_with_path);
+	strcat(command6, apk_name);
 	strcat(command6, command6_last);
 
 	// printf("%s", command6);
@@ -102,10 +130,10 @@ int main(int argc, char *argv[])
 	system(command2);
 	system(command3);
 	system("d2j-dex2jar --force winrar-apk\\classes.dex");
-	strcat(strcat(command7, apk_name_with_path), command7_last);
+	strcat(strcat(command7, apk_name), command7_last);
 	// printf("%s", command7);
 	system(command7);
-	strcat(strcat(command8, apk_name_with_path), command8_last);
+	strcat(strcat(command8, apk_name), command8_last);
 	// printf("%s", command8);
 	system(command8);
 	system(command6);

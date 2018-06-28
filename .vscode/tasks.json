@@ -40,6 +40,7 @@
                 "-o",
                 "apk_directory_decompiler.exe"
             ],
+            "dependsOn": "compile Apk Decompiler",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -60,7 +61,7 @@
             "type": "shell",
             "command": "apk_decompiler.exe",
             "args": [
-                "Cool me music HD version.apk"
+                "sample_apks\\Cool me music HD version.apk"
             ],
             "dependsOn": "compile Apk Decompiler",
             "problemMatcher": [],
@@ -77,7 +78,7 @@
             "type": "shell",
             "command": "apk_decompiler.exe",
             "args": [
-                "Whose Phone Number In Contacts 1.3_4.apk"
+                "sample_apks\\Whose Phone Number In Contacts 1.3_4.apk"
             ],
             "dependsOn": "compile Apk Decompiler",
             "problemMatcher": [],
@@ -94,7 +95,7 @@
             "type": "shell",
             "command": "apk_directory_decompiler.exe",
             "args": [
-                "E:\\DK-HP-PA-2000AR\\Laboratory\\CMD_GCC\\apk_directory_decompiler"
+                "E:\\DK-HP-PA-2000AR\\Laboratory\\CMD_GCC\\apk_directory_decompiler\\sample_apks"
             ],
             "dependsOn": [
                 "compile Apk Decompiler",

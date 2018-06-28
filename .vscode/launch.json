@@ -5,12 +5,61 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "(gdb) Launch Apk Folder Decompiler Absolute",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/apk_directory_decompiler.exe",
+            "args": [
+                "E:\\DK-HP-PA-2000AR\\Laboratory\\CMD_GCC\\apk_directory_decompiler\\sample_apks"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            //TODO : More than one pre-launch task
+            "preLaunchTask": "compile Apk Directory Decompiler",
+            "MIMode": "gdb",
+            // "miDebuggerPath": "C:\\Programs\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Launch Apk Folder Decompiler Relative",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/apk_directory_decompiler.exe",
+            "args": [
+                "sample_apks"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "preLaunchTask": "compile Apk Directory Decompiler",
+            "MIMode": "gdb",
+            // "miDebuggerPath": "C:\\Programs\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
             "name": "(gdb) Launch Apk Decompiler Large",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/apk_decompiler.exe",
             "args": [
-                "Cool me music HD version.apk"
+                "sample_apks\\Cool me music HD version.apk"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -34,7 +83,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/apk_decompiler.exe",
             "args": [
-                "Whose Phone Number In Contacts 1.3_4.apk"
+                "sample_apks\\Whose Phone Number In Contacts 1.3_4.apk"
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
