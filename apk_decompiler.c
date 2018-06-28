@@ -2,7 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-void main(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int i, j,
 		last_back_slash_position;

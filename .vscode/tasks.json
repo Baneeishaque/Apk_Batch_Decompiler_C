@@ -8,7 +8,10 @@
             "type": "shell",
             "command": "gcc",
             "args": [
-                "-Wall","-v","-save-temps","apk_decompiler.c","-o","apk_decompiler.exe"
+                "-Wall",
+                "${fileBasename}",
+                "-o",
+                "${fileBasenameNoExtension}.exe"
             ],
             "group": {
                 "kind": "build",
@@ -16,7 +19,48 @@
             },
             "problemMatcher": [
                 "$gcc"
-            ]
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true
+            }
+        },
+        {
+            "label": "run Apk decompiler large",
+            "type": "shell",
+            "command": "apk_decompiler.exe",
+            "args": [
+                "Cool me music HD version.apk"
+            ],
+            "dependsOn": "compile",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true
+            }
+        },
+        {
+            "label": "run Apk decompiler small",
+            "type": "shell",
+            "command": "apk_decompiler.exe",
+            "args": [
+                "Whose Phone Number In Contacts 1.3_4.apk"
+            ],
+            "dependsOn": "compile",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": true
+            }
         }
     ]
 }

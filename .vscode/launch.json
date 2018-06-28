@@ -5,15 +5,50 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(Windows) Launch",
-            "type": "cppvsdbg",
+            "name": "(gdb) Launch Apk Decompiler Large",
+            "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/apk_decompiler.exe",
-            "args": [],
+            "args": [
+                "Cool me music HD version.apk"
+            ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true
+            "externalConsole": true,
+            "preLaunchTask": "compile",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Programs\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "(gdb) Launch Apk Decompiler Small",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/apk_decompiler.exe",
+            "args": [
+                "Whose Phone Number In Contacts 1.3_4.apk"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "preLaunchTask": "compile",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\Programs\\mingw64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }
